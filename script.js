@@ -4,6 +4,7 @@ const imageBaseUrl = 'https://image.tmdb.org/t/p/w300';
 
 const moviesGrid = document.getElementById("movies-grid");
 const searchInput = document.getElementById("search-input");
+const categoryTitle = document.getElementById("category-title");
 
 async function fetchMoviesNowPlaying() {
     const response = await fetch(`${apiBaseUrl}/movie/now_playing?api_key=${apiKey}`);
@@ -36,6 +37,7 @@ function displayMovies(movies) {
 
 
 function handleSearchFormSubmit(event) {
+    categoryTitle.innerHTML = "Search Results";
     event.preventDefault();
     const searchQuery = searchInput.value; 
     const movies = searchMovies(searchQuery);
@@ -43,7 +45,9 @@ function handleSearchFormSubmit(event) {
 }
 
 
-//searchMovies("Batman");
+
+
+searchForm = document.getElementById("search-form");
 searchForm.addEventListener("submit", handleSearchFormSubmit);
 fetchMoviesNowPlaying();
 
