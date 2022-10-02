@@ -5,6 +5,7 @@ const imageBaseUrl = 'https://image.tmdb.org/t/p/w300';
 const moviesGrid = document.getElementById("movies-grid");
 const searchInput = document.getElementById("search-input");
 const categoryTitle = document.getElementById("category-title");
+const searchForm = document.getElementById("search-form");
 
 async function fetchMoviesNowPlaying() {
     const response = await fetch(`${apiBaseUrl}/movie/now_playing?api_key=${apiKey}`);
@@ -47,7 +48,7 @@ function handleSearchFormSubmit(event) {
 
 
 
-searchForm = document.getElementById("search-form");
+
 searchForm.addEventListener("submit", handleSearchFormSubmit);
 fetchMoviesNowPlaying();
 
